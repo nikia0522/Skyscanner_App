@@ -38,7 +38,9 @@ yerin.member=(function () {
         $('#container').html(yerin.compUI.div('icon-box'))
             .css({
                 'font-size':'30px',
-                'color':'white'
+                'color':'white',
+                'width':'100%',
+                'height':'100%'
             });
         $('#icon-box').append(yerin.compUI.i('fa fa-arrow-left'))
             .css({
@@ -169,7 +171,9 @@ yerin.login=(function () {
         $('#container').empty();
         $('#container')
             .css({
-                'font-size':'30px'
+                'font-size':'30px',
+                'width':'100%',
+                'height':'100%'
             });
         $('#container').html(yerin.compUI.div('icon-box'));
         $('#icon-box')
@@ -266,9 +270,9 @@ yerin.login=(function () {
 yerin.main=(function () {
     var onCreate=function () {
         setContentView();
-        $('#backBtn').click(e=>{
+        $('#menuBtn').click(e=>{
            e.preventDefault();
-           yerin.login.onCreate();
+           yerin.menuBar.onCreate();
         });
         $('#searchBtn').click(e=>{
             e.preventDefault();
@@ -289,14 +293,15 @@ yerin.main=(function () {
 
     };
     var setContentView=function () {
-        $('#container').empty();
         $('#container').html(yerin.compUI.div('icon-box'))
             .css({
                 'font-size':'30px',
-                'color':'white'
+                'color':'white',
+                'width':'100%',
+                'height':'100%'
             });
-        $('#icon-box').append(yerin.compUI.div('backBtn'));
-        $('#backBtn').append(yerin.compUI.i('fa fa-arrow-left'))
+        $('#icon-box').append(yerin.compUI.div('menuBtn'));
+        $('#menuBtn').append(yerin.compUI.i('fa fa-bars'))
             .css({
                 "padding-left": "20px",
                 "padding-top":"10px"
@@ -482,6 +487,170 @@ yerin.main=(function () {
     };
     return {onCreate : onCreate, setContentView : setContentView};
 })();
+yerin.menuBar=(function () {
+    var onCreate=function () {
+        setContentView();
+        $('#closeMenuIcon').click(e=>{
+            e.preventDefault();
+            $('body').empty();
+            $('body')
+                .append(yerin.compUI.div('wrapper'));
+            $('#wrapper')
+                .css({
+                    'position': 'relative',
+                    'width' : '100%',
+                    'height' : '100%',
+                    'margin' : '0 auto',
+                    'background-color' : '#00afcb',
+
+                })
+                .append(yerin.compUI.div('container'));
+            yerin.main.onCreate();
+        });
+        $('#goToSearchMain').click(e=>{
+            e.preventDefault();
+            $('body').empty();
+            $('body')
+                .append(yerin.compUI.div('wrapper'));
+            $('#wrapper')
+                .css({
+                    'position': 'relative',
+                    'width' : '100%',
+                    'height' : '100%',
+                    'margin' : '0 auto',
+                    'background-color' : '#00afcb',
+
+                })
+                .append(yerin.compUI.div('container'));
+            yerin.main.onCreate();
+        });
+        $('#logout').click(e=>{
+            e.preventDefault();
+            $('body').empty();
+            $('body')
+                .append(yerin.compUI.div('wrapper'));
+            $('#wrapper')
+                .css({
+                    'position': 'relative',
+                    'width' : '100%',
+                    'height' : '100%',
+                    'margin' : '0 auto',
+                    'background-color' : '#00afcb',
+
+                })
+                .append(yerin.compUI.div('container'));
+            yerin.login.onCreate();
+        });
+    };
+    var setContentView=function () {
+        $('#menuBar').empty();
+        $('#wrapper').addClass('layer-dark');
+        $('#wrapper').css({
+            'position': 'relative',
+            'width' : '100%',
+            'height' : '100%',
+            'margin' : '0 auto',
+            'opacity' : '0.5'
+
+        });
+        $('body').append(yerin.compUI.div('menuBar'));
+        $('#menuBar')
+            .css({
+                'width' : '85%',
+                'height' : '100%',
+                'position' : 'absolute',
+                'top' : '0px',
+                'margin' : '0 auto',
+                'border-radius': '4px',
+
+            });
+        $('#menuBar').append(yerin.compUI.div('header'));
+        $('#header').css({
+            'width' : '100%',
+            'height' : '30%',
+            'position' : 'absolute',
+            'top' : '0px',
+            'margin' : '0 auto',
+            'background': 'linear-gradient(to bottom right, #0099cc 0%, #00ffff 100%)'
+        })
+            .append(yerin.compUI.span('closeMenuIcon'));
+        $('#closeMenuIcon').text('X')
+            .css({
+                'position' : 'absolute',
+                "right": "10px",
+                "top ":"5px",
+                'font-size':'30px',
+                'color':'white'
+            });
+        $('#header').append(yerin.compUI.span('myLoginDetail'));
+        $('#myLoginDetail').text('hong@gmail.com')
+            .css({
+                'position' : 'absolute',
+                'bottom': '15px',
+                'left' : '15px',
+                'color' : 'white',
+                'font-size' : '15px'
+            });
+        $('#header').append(yerin.compUI.div('caretDownBtn'));
+        $('#caretDownBtn').append(yerin.compUI.i('fa fa-caret-down'));
+        $('#caretDownBtn').css({
+            'position' : 'absolute',
+            'bottom': '15px',
+            'right' : '15px',
+            'color' : 'white',
+            'font-size' : '20px'
+        });
+        $('#menuBar').append(yerin.compUI.div('menuContent'));
+        $('#menuContent').css({
+            'position' : 'absolute',
+            'bottom' : '0px',
+            'width' : '100%',
+            'height' : '70%',
+            'background-color' : 'white'
+        })
+            .append(yerin.compUI.ul('menu-list','menu-list'));
+        $('#menu-list').append(yerin.compUI.div('magnifyIcon'));
+        $('#magnifyIcon').append(yerin.compUI.i('fa fa-search'))
+            .css({
+                'position' :'absolute',
+                'top' : '20px',
+                'color' : 'grey',
+                'font-size': '15px'
+            });
+        $('#menu-list').append(yerin.compUI.div('configIcon'));
+        $('#configIcon').append(yerin.compUI.i('fa fa-cog'))
+            .css({
+                'position' :'absolute',
+                'top' : '80px',
+                'color' : 'grey',
+                'font-size': '15px'
+            });
+        $('#menu-list').append(yerin.compUI.div('infoIcon'));
+        $('#infoIcon').append(yerin.compUI.i('fa fa-info-circle'))
+            .css({
+                'position' :'absolute',
+                'top' : '143px',
+                'color' : 'grey',
+                'font-size': '15px'
+            });
+        $('#menu-list').append(yerin.compUI.div('signoutIcon'));
+        $('#signoutIcon').append(yerin.compUI.i('fa fa-sign-out'))
+            .css({
+                'position' :'absolute',
+                'top' : '203px',
+                'color' : 'grey',
+                'font-size': '15px'
+            });
+        $('#menu-list').append('<br/><ul style="list-style-type:none; font-weight: bold; color: grey">' +
+            '  <li id="goToSearchMain">새로 검색</li><hr/>' +
+            '  <li>설정</li><hr/>' +
+            '  <li>관련 정보</li><hr/>' +
+            '  <li id="logout">로그아웃</li>' +
+            '</ul>')
+    };
+    return {onCreate : onCreate};
+
+})();
 yerin.selectOption={
     depart : ()=>{
         return       '<span class="us-form-select-wrap" style="width: 70%; font-size: 20px">'
@@ -555,9 +724,8 @@ yerin.modalPopup=(function () {
                 'background-color' : '#00c6e5',
                 'border-radius': '4px'
 
-            });
-        $('#modalPopup').append(yerin.compUI.div('popupContent'));
-        $('#popupContent').append(yerin.compUI.span('header'));
+            })
+            .append(yerin.compUI.span('header'));
         $('#header').append(yerin.compUI.span('headerText'));
         $('#headerText').text('서울 근처 공항 보기')
             .css({
@@ -577,30 +745,35 @@ yerin.modalPopup=(function () {
                 'font-size':'30px',
                 'color':'white'
             });
+        $('#modalPopup').append(yerin.compUI.div('popupContent'));
+        $('#popupContent')
+            .css({
+                'position' : 'absolute',
+                'bottom' : '0px',
+                'width' : '100%',
+                'height' : '90%',
+                'background-color' : 'white'
+            });
         $('#popupContent').append(yerin.compUI.span('modalContent'));
         $('#modalContent').append(yerin.compUI.div('images'));
         $('#images').append(yerin.compUI.span('image1'));
-        $('#image1').css({
+        $('#image1').append(yerin.compUI.image('airportImage1','https://static.independent.co.uk/s3fs-public/thumbnails/image/2016/03/04/10/seoul-getty.jpg'));
+        $('#airportImage1').css({
+            'width' : '145px',
+            'height' : '90px',
             'position': 'absolute',
-            'top' : '70px',
-            'left' : '7px',
-            'width' : '45%',
-            'height' : '70px',
-            'background-color' : 'white',
-            'border' : '1px solid white'
+            'top' : '40px',
+            'left' : '10px'
         });
-        $('#image1').append(yerin.compUI.image('airport1',''));
         $('#images').append(yerin.compUI.span('image2'));
-        $('#image2').css({
+        $('#image2').append(yerin.compUI.image('airportImage2','https://inhabitat.com/wp-content/blogs.dir/1/files/2017/04/Lotte-World-Tower-by-Kohn-Pederson-Fox-Associates-4.jpg'));
+        $('#airportImage2').css({
+            'width' : '145px',
+            'height' : '90px',
             'position': 'absolute',
-            'top' : '70px',
-            'right' : '7px',
-            'width' : '45%',
-            'height' : '70px',
-            'background-color' : 'white',
-            'border' : '1px solid white'
+            'top' : '40px',
+            'right' : '10px'
         });
-        $('#image2').append(yerin.compUI.image('airport2',''));
         $('#modalContent').append(yerin.compUI.div('googleMap'));
         $('#googleMap').append(yerin.compUI.span('googleText'))
             .css({
@@ -610,8 +783,8 @@ yerin.modalPopup=(function () {
                 'width' : '95%',
                 'height' : '300px',
                 'margin' : '0 auto',
-                'background-color' : 'pink',
-                'border' : '1px solid pink'
+                'border' : '1px solid pink',
+                'text-align': 'center'
             });
         $('#googleText').text('구글맵이 들어갈 자리임');
     };
@@ -647,21 +820,21 @@ yerin.searchResult=(function () {
                 "padding-left": "20px",
                 "padding-top":"10px"
             });
-        $('#icon-box').append(yerin.compUI.span('departCity'));
-        $('#departCity').text(' 출발지 - ')
+        $('#backMainBtn').append(yerin.compUI.span('headerDepartCity'));
+        $('#headerDepartCity').text(' 출발지 - ')
             .css({
                 "font-size":'15px',
                 'padding-left':'10px'
             });
-        $('#icon-box').append(yerin.compUI.span('arriveCity'));
-        $('#arriveCity').text(' 도착지')
+        $('#backMainBtn').append(yerin.compUI.span('headerArriveCity'));
+        $('#headerArriveCity').text(' 도착지')
             .css({
                 "font-size":'15px'
             });
 /*        $('#icon-box').append(yerin.compUI.span('date'));
         $('#date').css({"font-size":'15px'}).text('  ');*/
-        $('#icon-box').append(yerin.compUI.span('date'));
-        $('#date').text(' 날짜~~~')
+        $('#backMainBtn').append(yerin.compUI.span('date'));
+        $('#date').text('20/10/2017')
             .css({
                 "font-size":'15px',
                 'padding-left':'30px'
@@ -697,15 +870,22 @@ yerin.searchResult=(function () {
             'background-color': 'white',
             'border': '1px solid white'
         });
-        $('#listBlock').append(yerin.compUI.div('flight-list'));
-        $('#flight-list').css({
+        $('#listBlock').append(yerin.compUI.div('detailHeader'));
+        $('#detailHeader').css({
             'width' : '95%',
-            'height' : '90px',
+            'height' : '60px',
             'margin-top' : '9px',
             'margin-left': '9px',
-            'background-color' : '#dadee5',
-            'border' : '1px solid #dadee5'
+            'text-align' : 'center',
+            'background-color' : '#e1e3e6'
         });
+        $('#detailHeader').append(yerin.compUI.span('detailTitle'));
+        $('#detailTitle').text('예매 정보')
+            .css({
+                'font-size' : '20px',
+                'color' : 'grey'
+            });
+        $('#listBlock').append(yerin.compUI.div('depart-flight-list'));
         $('#listBlock').append(yerin.compUI.btn('payBtn'));
         $('#payBtn').text('결제')
             .css({
@@ -795,7 +975,8 @@ yerin.pay=(function () {
         $('#payDetail').append(yerin.compUI.input('writePayEmail','text'));
         $('#writePayEmail')
             .attr({
-                'placeholder' : 'abc@abc.com'
+                'placeholder' : 'abc@abc.com',
+                'value' : 'abc@abc.com'
             })
             .css({
             'position' : 'absolute',
@@ -815,7 +996,8 @@ yerin.pay=(function () {
         $('#payDetail').append(yerin.compUI.input('writeCardDetail', 'text'));
         $('#writeCardDetail')
             .attr({
-                'placeholder' : '16자리 카드 번호'
+                'placeholder' : '16자리 카드 번호',
+                'value' : '11111'
             })
             .css({
             'position' : 'absolute',
@@ -892,7 +1074,7 @@ yerin.final=(function () {
                 'color' : '#737578'
             });
         $('#finalText').append(yerin.compUI.div('finalDetail'));
-        $('#finalDetail').text('디테일 뿌리기')
+        $('#finalDetail').text('디테일')
             .css({
                 'padding-top' : '40px'
             });

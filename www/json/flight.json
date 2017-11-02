@@ -1,0 +1,34 @@
+[
+  {
+    "flight_no": "BA101",
+    "airline": "영국항공",
+    "cabin_class": "Y",
+    "departCity": "런던/히드로(LHW)",
+    "arriveCity": "서울/인천(ICN)",
+    "price": "500090"
+  },
+  {
+    "flight_no": "BA102",
+    "airline": "영국항공",
+    "cabin_class": "Y",
+    "departCity": "서울/인천(ICN)",
+    "arriveCity": "런던/히드로(LHW)",
+    "price": "412090"
+  },
+  {
+    "flight_no": "BA201",
+    "airline": "영국항공",
+    "cabin_class": "Y",
+    "departCity": "런던/히드로(LHW)",
+    "arriveCity": "서울/김포(GMP)",
+    "price": "423410"
+  },
+  {
+    "flight_no": "BA202",
+    "airline": "영국항공",
+    "cabin_class": "Y",
+    "departCity": "서울/김포(GMP)",
+    "arriveCity": "런던/히드로(LHW)",
+    "price": "501200"
+  }
+]

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+
+<div class="w3-content w3-display-container">
+
+    <div class="w3-display-container mySlides">
+        <img src="https://www.worldtravelguide.net/wp-content/uploads/2017/04/Think-SouthKorea-Seoul-Palace-491617410-Reabirdna-copy.jpg" style="width:90%; height: 220px;">
+        <div class="w3-display-topright w3-large w3-container w3-padding-16" style="margin: 15px;">
+            Seoul
+        </div>
+    </div>
+
+    <div class="w3-display-container mySlides">
+        <img src="http://atom.mu/wp-content/uploads/2017/01/London-Expat-Explore-Xmas-2017.jpg" style="width:90%; height: 220px">
+        <div class="w3-display-bottomleft w3-large w3-container w3-padding-16" style="margin: 15px;">
+            London
+        </div>
+    </div>
+
+    <div class="w3-display-container mySlides">
+        <img src="http://www.telegraph.co.uk/content/dam/Travel/Destinations/Asia/Japan/Tokyo/tokyo-shopping-lead-akihabara-xlarge.jpg" style="width:90%; height: 220px">
+        <div class="w3-display-bottomright w3-large w3-container w3-padding-16" style="margin: 15px;">
+            Tokyo
+        </div>
+    </div>
+
+    <div class="w3-display-container mySlides">
+        <img src="https://www.st-christophers.co.uk/__data/assets/image/0005/441644/iStock-604371970.jpg" style="width:95%; height: 220px">
+        <div class="w3-display-topleft w3-large w3-container w3-padding-16" style="margin: 15px;">
+            Paris
+        </div>
+    </div>
+
+    <button class="w3-button w3-display-left " onclick="plusDivs(-1)">&#10094;</button>
+    <button class="w3-button w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+
+</div>
+
+<script>
+    var slideIndex = 1;
+    showDivs(slideIndex);
+
+    function plusDivs(n) {
+        showDivs(slideIndex += n);
+    }
+
+    function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        if (n > x.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = x.length}
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        x[slideIndex-1].style.display = "block";
+    }
+</script>
+
+</body>
+</html>

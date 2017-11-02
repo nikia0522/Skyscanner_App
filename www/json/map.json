@@ -1,0 +1,30 @@
+[
+  {
+    "lat": "51.470022",
+    "lng": "-0.454295",
+    "airport": "런던/히드로(LHW)",
+    "departcity": "london",
+    "seq": "0"
+  },
+  {
+    "lat": "51.153662",
+    "lng": "-0.182063",
+    "airport": "런던/개트윅(LGW)",
+    "departcity": "london",
+    "seq": "0"
+  },
+  {
+    "lat": "37.460191",
+    "lng": "126.440696",
+    "airport": "서울/인천(ICN)",
+    "departcity": "seoul",
+    "seq": "0"
+  },
+  {
+    "lat": "37.558655",
+    "lng": "126.794474",
+    "airport": "서울/김포(GMP)",
+    "departcity": "seoul",
+    "seq": "0"
+  }
+]

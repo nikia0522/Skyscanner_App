@@ -1,0 +1,18 @@
+[
+  {
+    "reservationNo" : "SKY012345",
+    "gender" : "male",
+    "surname" : "HONG",
+    "firstname" : "GILDONG",
+    "country":"Korea, Republic Of",
+    "phone" : "01012345678",
+    "email": "hong@test.com",
+    "flight_no" : "KE908",
+    "airline" : "대한항공",
+    "cabin_class" : "Y",
+    "departCity" : "서울/인천(ICH)",
+    "arriveCity" : "런던/히드로(LHW)",
+    "departDate" : "2017-11-10",
+    "arriveDate" : "2017-11-20"
+  }
+]

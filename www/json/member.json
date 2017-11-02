@@ -1,10 +1,10 @@
 [
   {
-  "id":"hong",
+  "email":"hong",
   "pass":"1"
   },
   {
-    "id":"kim",
+    "email":"kim",
     "pass":"1"
   }
 ]

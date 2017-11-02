@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, user-scalable=no,  maximum-scale=1, minimum-scale=1, width=device-width" charset="UTF-8">
+    <!--CSS LINK-->
+    <link rel="stylesheet" href="css/index.css" type="text/css">
+    <style>
+        #map {
+            height: 100%;
+        }
+    </style>
+    <title> Google Map Test </title>
+
+</head>
+<body>
+<div id="map"></div>
+
+<!--JS LINK-->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBK8SkAXsrh85-5PnhpHGjkxfWCwZJBNLE&callback=initMap"
+        async defer></script>
+<script>
+
+    function initMap() {
+        $.ajax({
+            async : false,
+            url : 'json/map.json',
+            type : 'post',
+            dataType : 'json',
+            success : d => {
+                map = new google.maps.Map(document.getElementById('map'), {
+                    zoom: 9,
+                    center: new google.maps.LatLng(51.470022, -0.454295),
+                });
+                var json_lat = [];
+                var json_lng = [];
+                for(var i=0; i<d.length; i++){
+                    if(d[i].departcity === yerin.session.getSessionData('map-airport')){
+                        json_lat = d[i].lat;
+                        json_lng = d[i].lng;
+                        console.log(json_lat);
+                        console.log(json_lng);
+                        var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
+                        var icons = {
+                            airports: {
+                                icon: iconBase + 'airports.png'
+                            }
+                        };
+                        var features = [
+                            {
+                                position: new google.maps.LatLng(json_lat, json_lng),
+                                type: 'airports'
+                            },
+                            {
+                                position: new google.maps.LatLng(json_lat, json_lng),
+                                type: 'airports'
+                            }
+                        ];
+                        features.forEach(function (features) {
+                            var marker = new google.maps.Marker({
+                                position: features.position,
+                                icon: icons[features.type].icon,
+                                map: map
+                            });
+                        });
+                    }
+                }
+            },
+            error : e => {
+                alert('에러');
+            }
+        });
+/*        $.ajax({
+            async : false,
+            url : 'json/map.json',
+            type : 'post',
+            dataType : 'json',
+            success : d => {
+                map = new google.maps.Map(document.getElementById('map'), {
+                    zoom: 9,
+                    center: new google.maps.LatLng(37.460191, 126.440696),
+                });
+                var json_lat = [];
+                var json_lng = [];
+                for(var i=0; i<d.length; i++){
+                    if(d[i].departcity === yerin.session.getSessionData('map-airport2')){
+                        json_lat = d[i].lat;
+                        json_lng = d[i].lng;
+                        console.log(json_lat);
+                        console.log(json_lng);
+                        var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
+                        var icons = {
+                            airports: {
+                                icon: iconBase + 'airports.png'
+                            }
+                        };
+                        var features = [
+                            {
+                                position: new google.maps.LatLng(json_lat, json_lng),
+                                type: 'airports'
+                            },
+                            {
+                                position: new google.maps.LatLng(json_lat, json_lng),
+                                type: 'airports'
+                            }
+                        ];
+                        features.forEach(function (features) {
+                            var marker = new google.maps.Marker({
+                                position: features.position,
+                                icon: icons[features.type].icon,
+                                map: map
+                            });
+                        });
+                    }
+                }
+            },
+            error : e => {
+                alert('에러');
+            }
+        });*/
+    }
+</script>
+
+</body>
+</html>

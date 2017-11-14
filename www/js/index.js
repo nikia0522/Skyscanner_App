@@ -126,7 +126,7 @@ yerin.login=(function () {
                 url : 'json/member.json',
                 type : 'post',
                 data : {email:email, pass:pass},
-                datatype: 'json',
+                datatype: 'jsonp',
                 success : d =>{
                     $.each(d,(i,o)=>{
                         if(o.email === email && o.pass === pass){
@@ -522,42 +522,219 @@ yerin.main=(function () {
             e.preventDefault();
             if ($("#selectBox1 option:selected").val() === 'seoul') {
                 yerin.session.init('map-airport', 'seoul');
+                if ($("#selectBox2 option:selected").val() === 'ICN'){
+                    yerin.session.init('map-depart', '서울/인천(ICN)');
+                }else if($("#selectBox2 option:selected").val() === 'default'){
+                    yerin.session.init('map-depart', 'default');
+                } else if($("#selectBox2 option:selected").val() === 'GMP'){
+                    yerin.session.init('map-depart', '서울/김포(GMP)');
+                }else if($("#selectBox2 option:selected").val() === 'LHW'){
+                    yerin.session.init('map-depart', '런던/히드로(LHW)');
+                }else if($("#selectBox2 option:selected").val() === 'LGW'){
+                    yerin.session.init('map-depart', '런던/개트윅(LGW)');
+                }else if($("#selectBox2 option:selected").val() === 'NRT'){
+                    yerin.session.init('map-depart', '도쿄/나리타(NRT)');
+                }else if($("#selectBox2 option:selected").val() === 'HND'){
+                    yerin.session.init('map-depart', '도쿄/하네다(HND)');
+                }else if($("#selectBox2 option:selected").val() === 'CDG'){
+                    yerin.session.init('map-depart', '파리/샤를드골(CDG)');
+                }else if($("#selectBox2 option:selected").val() === 'ORY'){
+                    yerin.session.init('map-depart', '파리/오를리(ORY)');
+                }
+            }else if($("#selectBox1 option:selected").val() === 'default') {
+                yerin.session.init('map-airport', 'default');
+                if ($("#selectBox2 option:selected").val() === 'ICN'){
+                    yerin.session.init('map-depart', '서울/인천(ICN)');
+                }else if($("#selectBox2 option:selected").val() === 'default'){
+                    yerin.session.init('map-depart', 'default');
+                } else if($("#selectBox2 option:selected").val() === 'GMP'){
+                    yerin.session.init('map-depart', '서울/김포(GMP)');
+                }else if($("#selectBox2 option:selected").val() === 'LHW'){
+                    yerin.session.init('map-depart', '런던/히드로(LHW)');
+                }else if($("#selectBox2 option:selected").val() === 'LGW'){
+                    yerin.session.init('map-depart', '런던/개트윅(LGW)');
+                }else if($("#selectBox2 option:selected").val() === 'NRT'){
+                    yerin.session.init('map-depart', '도쿄/나리타(NRT)');
+                }else if($("#selectBox2 option:selected").val() === 'HND'){
+                    yerin.session.init('map-depart', '도쿄/하네다(HND)');
+                }else if($("#selectBox2 option:selected").val() === 'CDG'){
+                    yerin.session.init('map-depart', '파리/샤를드골(CDG)');
+                }else if($("#selectBox2 option:selected").val() === 'ORY'){
+                    yerin.session.init('map-depart', '파리/오를리(ORY)');
+                }
             }else if($("#selectBox1 option:selected").val() === 'london') {
                 yerin.session.init('map-airport', 'london');
+                if ($("#selectBox2 option:selected").val() === 'ICN'){
+                    yerin.session.init('map-depart', '서울/인천(ICN)');
+                }else if($("#selectBox2 option:selected").val() === 'default'){
+                    yerin.session.init('map-depart', 'default');
+                } else if($("#selectBox2 option:selected").val() === 'GMP'){
+                    yerin.session.init('map-depart', '서울/김포(GMP)');
+                }else if($("#selectBox2 option:selected").val() === 'LHW'){
+                    yerin.session.init('map-depart', '런던/히드로(LHW)');
+                }else if($("#selectBox2 option:selected").val() === 'LGW'){
+                    yerin.session.init('map-depart', '런던/개트윅(LGW)');
+                }else if($("#selectBox2 option:selected").val() === 'NRT'){
+                    yerin.session.init('map-depart', '도쿄/나리타(NRT)');
+                }else if($("#selectBox2 option:selected").val() === 'HND'){
+                    yerin.session.init('map-depart', '도쿄/하네다(HND)');
+                }else if($("#selectBox2 option:selected").val() === 'CDG'){
+                    yerin.session.init('map-depart', '파리/샤를드골(CDG)');
+                }else if($("#selectBox2 option:selected").val() === 'ORY'){
+                    yerin.session.init('map-depart', '파리/오를리(ORY)');
+                }
             }else if($("#selectBox1 option:selected").val() === 'tokyo') {
                 yerin.session.init('map-airport', 'tokyo');
+                if ($("#selectBox2 option:selected").val() === 'ICN'){
+                    yerin.session.init('map-depart', '서울/인천(ICN)');
+                }else if($("#selectBox2 option:selected").val() === 'default'){
+                    yerin.session.init('map-depart', 'default');
+                } else if($("#selectBox2 option:selected").val() === 'GMP'){
+                    yerin.session.init('map-depart', '서울/김포(GMP)');
+                }else if($("#selectBox2 option:selected").val() === 'LHW'){
+                    yerin.session.init('map-depart', '런던/히드로(LHW)');
+                }else if($("#selectBox2 option:selected").val() === 'LGW'){
+                    yerin.session.init('map-depart', '런던/개트윅(LGW)');
+                }else if($("#selectBox2 option:selected").val() === 'NRT'){
+                    yerin.session.init('map-depart', '도쿄/나리타(NRT)');
+                }else if($("#selectBox2 option:selected").val() === 'HND'){
+                    yerin.session.init('map-depart', '도쿄/하네다(HND)');
+                }else if($("#selectBox2 option:selected").val() === 'CDG'){
+                    yerin.session.init('map-depart', '파리/샤를드골(CDG)');
+                }else if($("#selectBox2 option:selected").val() === 'ORY'){
+                    yerin.session.init('map-depart', '파리/오를리(ORY)');
+                }
             }else if($("#selectBox1 option:selected").val() === 'paris') {
                 yerin.session.init('map-airport', 'paris');
+                if ($("#selectBox2 option:selected").val() === 'ICN'){
+                    yerin.session.init('map-depart', '서울/인천(ICN)');
+                }else if($("#selectBox2 option:selected").val() === 'default'){
+                    yerin.session.init('map-depart', 'default');
+                } else if($("#selectBox2 option:selected").val() === 'GMP'){
+                    yerin.session.init('map-depart', '서울/김포(GMP)');
+                }else if($("#selectBox2 option:selected").val() === 'LHW'){
+                    yerin.session.init('map-depart', '런던/히드로(LHW)');
+                }else if($("#selectBox2 option:selected").val() === 'LGW'){
+                    yerin.session.init('map-depart', '런던/개트윅(LGW)');
+                }else if($("#selectBox2 option:selected").val() === 'NRT'){
+                    yerin.session.init('map-depart', '도쿄/나리타(NRT)');
+                }else if($("#selectBox2 option:selected").val() === 'HND'){
+                    yerin.session.init('map-depart', '도쿄/하네다(HND)');
+                }else if($("#selectBox2 option:selected").val() === 'CDG'){
+                    yerin.session.init('map-depart', '파리/샤를드골(CDG)');
+                }else if($("#selectBox2 option:selected").val() === 'ORY'){
+                    yerin.session.init('map-depart', '파리/오를리(ORY)');
+                }
             }
-/*            if ($("#selectBox2 option:selected").val() === 'ICN'){
-                yerin.session.init('map-depart', '서울/인천(ICN)');
-            }else if($("#selectBox2 option:selected").val() === 'GMP'){
-                yerin.session.init('map-depart', '서울/김포(GMP)');
-            }else if($("#selectBox2 option:selected").val() === 'LHW'){
-                yerin.session.init('map-depart', '런던/히드로(LHW)');
-            }else if($("#selectBox2 option:selected").val() === 'LGW'){
-                yerin.session.init('map-depart', '런던/개트윅(LGW)');
-            }else if($("#selectBox2 option:selected").val() === 'NRT'){
-                yerin.session.init('map-depart', '도쿄/나리타(NRT)');
-            }else if($("#selectBox2 option:selected").val() === 'HND'){
-                yerin.session.init('map-depart', '도쿄/하네다(HND)');
-            }else if($("#selectBox2 option:selected").val() === 'CDG'){
-                yerin.session.init('map-depart', '파리/샤를드골(CDG)');
-            }else if($("#selectBox2 option:selected").val() === 'ORY'){
-                yerin.session.init('map-depart', '파리/오를리(ORY)');
-            }*/
             yerin.modalPopup.onCreate();
         });
         $('#viewArriveAirport').click(e=>{
             e.preventDefault();
             if ($("#selectBox4 option:selected").val() === 'seoul') {
                 yerin.session.init('map-airport', 'seoul');
+                if ($("#selectBox2 option:selected").val() === 'ICN'){
+                    yerin.session.init('map-depart', '서울/인천(ICN)');
+                }else if($("#selectBox2 option:selected").val() === 'default'){
+                    yerin.session.init('map-depart', 'default');
+                } else if($("#selectBox2 option:selected").val() === 'GMP'){
+                    yerin.session.init('map-depart', '서울/김포(GMP)');
+                }else if($("#selectBox2 option:selected").val() === 'LHW'){
+                    yerin.session.init('map-depart', '런던/히드로(LHW)');
+                }else if($("#selectBox2 option:selected").val() === 'LGW'){
+                    yerin.session.init('map-depart', '런던/개트윅(LGW)');
+                }else if($("#selectBox2 option:selected").val() === 'NRT'){
+                    yerin.session.init('map-depart', '도쿄/나리타(NRT)');
+                }else if($("#selectBox2 option:selected").val() === 'HND'){
+                    yerin.session.init('map-depart', '도쿄/하네다(HND)');
+                }else if($("#selectBox2 option:selected").val() === 'CDG'){
+                    yerin.session.init('map-depart', '파리/샤를드골(CDG)');
+                }else if($("#selectBox2 option:selected").val() === 'ORY'){
+                    yerin.session.init('map-depart', '파리/오를리(ORY)');
+                }
+            }else if($("#selectBox1 option:selected").val() === 'default') {
+                yerin.session.init('map-airport', 'default');
+                if ($("#selectBox2 option:selected").val() === 'ICN'){
+                    yerin.session.init('map-depart', '서울/인천(ICN)');
+                }else if($("#selectBox2 option:selected").val() === 'default'){
+                    yerin.session.init('map-depart', 'default');
+                } else if($("#selectBox2 option:selected").val() === 'GMP'){
+                    yerin.session.init('map-depart', '서울/김포(GMP)');
+                }else if($("#selectBox2 option:selected").val() === 'LHW'){
+                    yerin.session.init('map-depart', '런던/히드로(LHW)');
+                }else if($("#selectBox2 option:selected").val() === 'LGW'){
+                    yerin.session.init('map-depart', '런던/개트윅(LGW)');
+                }else if($("#selectBox2 option:selected").val() === 'NRT'){
+                    yerin.session.init('map-depart', '도쿄/나리타(NRT)');
+                }else if($("#selectBox2 option:selected").val() === 'HND'){
+                    yerin.session.init('map-depart', '도쿄/하네다(HND)');
+                }else if($("#selectBox2 option:selected").val() === 'CDG'){
+                    yerin.session.init('map-depart', '파리/샤를드골(CDG)');
+                }else if($("#selectBox2 option:selected").val() === 'ORY'){
+                    yerin.session.init('map-depart', '파리/오를리(ORY)');
+                }
             }else if($("#selectBox4 option:selected").val() === 'london') {
                 yerin.session.init('map-airport', 'london');
+                if ($("#selectBox2 option:selected").val() === 'ICN'){
+                    yerin.session.init('map-depart', '서울/인천(ICN)');
+                }else if($("#selectBox2 option:selected").val() === 'default'){
+                    yerin.session.init('map-depart', 'default');
+                } else if($("#selectBox2 option:selected").val() === 'GMP'){
+                    yerin.session.init('map-depart', '서울/김포(GMP)');
+                }else if($("#selectBox2 option:selected").val() === 'LHW'){
+                    yerin.session.init('map-depart', '런던/히드로(LHW)');
+                }else if($("#selectBox2 option:selected").val() === 'LGW'){
+                    yerin.session.init('map-depart', '런던/개트윅(LGW)');
+                }else if($("#selectBox2 option:selected").val() === 'NRT'){
+                    yerin.session.init('map-depart', '도쿄/나리타(NRT)');
+                }else if($("#selectBox2 option:selected").val() === 'HND'){
+                    yerin.session.init('map-depart', '도쿄/하네다(HND)');
+                }else if($("#selectBox2 option:selected").val() === 'CDG'){
+                    yerin.session.init('map-depart', '파리/샤를드골(CDG)');
+                }else if($("#selectBox2 option:selected").val() === 'ORY'){
+                    yerin.session.init('map-depart', '파리/오를리(ORY)');
+                }
             }else if($("#selectBox4 option:selected").val() === 'tokyo') {
                 yerin.session.init('map-airport', 'tokyo');
+                if ($("#selectBox2 option:selected").val() === 'ICN'){
+                    yerin.session.init('map-depart', '서울/인천(ICN)');
+                }else if($("#selectBox2 option:selected").val() === 'default'){
+                    yerin.session.init('map-depart', 'default');
+                } else if($("#selectBox2 option:selected").val() === 'GMP'){
+                    yerin.session.init('map-depart', '서울/김포(GMP)');
+                }else if($("#selectBox2 option:selected").val() === 'LHW'){
+                    yerin.session.init('map-depart', '런던/히드로(LHW)');
+                }else if($("#selectBox2 option:selected").val() === 'LGW'){
+                    yerin.session.init('map-depart', '런던/개트윅(LGW)');
+                }else if($("#selectBox2 option:selected").val() === 'NRT'){
+                    yerin.session.init('map-depart', '도쿄/나리타(NRT)');
+                }else if($("#selectBox2 option:selected").val() === 'HND'){
+                    yerin.session.init('map-depart', '도쿄/하네다(HND)');
+                }else if($("#selectBox2 option:selected").val() === 'CDG'){
+                    yerin.session.init('map-depart', '파리/샤를드골(CDG)');
+                }else if($("#selectBox2 option:selected").val() === 'ORY'){
+                    yerin.session.init('map-depart', '파리/오를리(ORY)');
+                }
             }else if($("#selectBox4 option:selected").val() === 'paris') {
                 yerin.session.init('map-airport', 'paris');
+                if ($("#selectBox2 option:selected").val() === 'ICN'){
+                    yerin.session.init('map-depart', '서울/인천(ICN)');
+                }else if($("#selectBox2 option:selected").val() === 'default'){
+                    yerin.session.init('map-depart', 'default');
+                } else if($("#selectBox2 option:selected").val() === 'GMP'){
+                    yerin.session.init('map-depart', '서울/김포(GMP)');
+                }else if($("#selectBox2 option:selected").val() === 'LHW'){
+                    yerin.session.init('map-depart', '런던/히드로(LHW)');
+                }else if($("#selectBox2 option:selected").val() === 'LGW'){
+                    yerin.session.init('map-depart', '런던/개트윅(LGW)');
+                }else if($("#selectBox2 option:selected").val() === 'NRT'){
+                    yerin.session.init('map-depart', '도쿄/나리타(NRT)');
+                }else if($("#selectBox2 option:selected").val() === 'HND'){
+                    yerin.session.init('map-depart', '도쿄/하네다(HND)');
+                }else if($("#selectBox2 option:selected").val() === 'CDG'){
+                    yerin.session.init('map-depart', '파리/샤를드골(CDG)');
+                }else if($("#selectBox2 option:selected").val() === 'ORY'){
+                    yerin.session.init('map-depart', '파리/오를리(ORY)');
+                }
             }
             yerin.modalPopup.onCreate();
         });
@@ -1279,6 +1456,7 @@ yerin.modalPopup=(function () {
         setContentView();
         $('#closeIcon').click(e=>{
             e.preventDefault();
+            alert('세션에 있는 값:' + yerin.session.getSessionData('map-airport')+': '+yerin.session.getSessionData('map-depart'));
             $('#wrapper').empty();
             $('#wrapper').css({
                 'background-color':'#00afcb'
@@ -1287,29 +1465,54 @@ yerin.modalPopup=(function () {
             $('#container').empty();
             yerin.main.onCreate();
 
-/*            switch(yerin.session.getSessionData('city1')){
+            switch(yerin.session.getSessionData('map-airport')){
                 case 'seoul':
-                    $("#selectBox1").html(yerin.session.getSessionData('city1'));
+                    $("#selectBox1").html('    <option value="default">도시 선택</option>'
+                        +'    <option selected value="seoul" >서울</option>'
+                        +'    <option value="london" >런던</option>'
+                        +'    <option value="tokyo" >도쿄</option>'
+                        +'    <option value="paris" >파리</option> ');
+                    $('#selectBox2')
+                        .html('    <option value="default">공항 선택</option>' +
+                            "<option value='ICN'>서울, 인천국제공항(ICN)</option>" +
+                            "<option value=GMP'>서울, 김포국제공항(GMP)</option>")
+                        .change(()=>{
+                            airport = $(this).find("option:selected").val();
+                        });
+                    $('#selectBox3')
+                        .html('    <option value="default">항공사 선택</option>' +
+                            "<option value='KAL'>대한항공</option>" +
+                            "<option value='BA'>영국항공</option>" +
+                            "<option value='JAL'>일본항공</option>" +
+                            "<option value='FR'>에어프랑스</option>")
+                        .change(()=>{
+                            airline = $(this).find("option:selected").val();
+                        });
+                    $('#selectBox2> option selected').val('KAL');
                     break;
                 case 'london' :
-
+                    $("#selectBox1").html('    <option value="default">도시 선택</option>'
+                        +'    <option value="seoul" >서울</option>'
+                        +'    <option selected value="london" >런던</option>'
+                        +'    <option value="tokyo" >도쿄</option>'
+                        +'    <option value="paris" >파리</option> ');
                     break;
                 case 'tokyo' :
-
+                    $("#selectBox1").html('    <option value="default">도시 선택</option>'
+                        +'    <option value="seoul" >서울</option>'
+                        +'    <option value="london" >런던</option>'
+                        +'    <option selected value="tokyo" >도쿄</option>'
+                        +'    <option value="paris" >파리</option> ');
                     break;
                 case 'paris' :
-
+                    $("#selectBox1").html('    <option value="default">도시 선택</option>'
+                        +'    <option value="seoul" >서울</option>'
+                        +'    <option value="london" >런던</option>'
+                        +'    <option value="tokyo" >도쿄</option>'
+                        +'    <option selected value="paris" >파리</option> ');
                     break;
 
             }
-            console.log('세션에 있는 값:' + yerin.session.getSessionData('city1'));
-            $("#selectBox1 option:selected").val(yerin.session.getSessionData('city1'));
-
-            $("#selectBox2 option:selected").val(yerin.session.getSessionData('depart'));
-            $("#selectBox3 option:selected").val(yerin.session.getSessionData('depart_airline'));
-            $("#selectBox4 option:selected").val(yerin.session.getSessionData('city2'));
-            $("#selectBox5 option:selected").val(yerin.session.getSessionData('arrive'));
-            $("#selectBox6 option:selected").val(yerin.session.getSessionData('arrive_airline'));*/
         });
     };
     var setContentView = function () {
@@ -1375,93 +1578,7 @@ yerin.modalPopup=(function () {
 
         $('#googleMap').load('map.html');
 
-    };
-    return {onCreate : onCreate, setContentView : setContentView};
-})();
 
-yerin.modalPopup2=(function () {
-    var onCreate = function () {
-        setContentView();
-        $('#closeIcon').click(e=>{
-            e.preventDefault();
-            $('#wrapper').empty();
-            $('#wrapper').css({
-                'background-color':'#00afcb'
-            });
-            $('#wrapper').append(yerin.compUI.div('container'));
-            $('#container').empty();
-            yerin.main.onCreate();
-            $("#selectBox1 option:selected").val(yerin.session.getSessionData('city1'));
-            $("#selectBox2 option:selected").val(yerin.session.getSessionData('depart'));
-            $("#selectBox3 option:selected").val(yerin.session.getSessionData('depart_airline'));
-            $("#selectBox4 option:selected").val(yerin.session.getSessionData('city2'));
-            $("#selectBox5 option:selected").val(yerin.session.getSessionData('arrive'));
-            $("#selectBox6 option:selected").val(yerin.session.getSessionData('arrive_airline'));
-        });
-    };
-    var setContentView = function () {
-        $('#modalPopup').empty();
-        $('#wrapper').addClass('layer-dark');
-        $('#wrapper').css({
-            'position': 'relative',
-            'width' : '100%',
-            'height' : '100%',
-            'margin' : '0 auto',
-            'background-color' : '#dadcdf'
-        });
-        $('#wrapper').append(yerin.compUI.div('modalPopup'));
-        $('#modalPopup')
-            .css({
-                'width' : '90%',
-                'height' : '90%',
-                'position' : 'absolute',
-                'top' : '20px',
-                'left' : '17px',
-                'margin' : '0 auto',
-                'border' : '1px solid #00c6e5',
-                'background-color' : '#00c6e5',
-                'border-radius': '4px'
-
-            })
-            .append(yerin.compUI.span('header'));
-        $('#header').append(yerin.compUI.span('headerText'));
-        $('#headerText').text(yerin.session.getSessionData('map-airport2')+' 근처 공항 보기')
-            .css({
-                'position' : 'absolute',
-                'left' : '10px',
-                'top' : '5px',
-                'font-size': '25px',
-                'color' : 'white'
-
-            });
-        $('#header').append(yerin.compUI.span('closeIcon'));
-        $('#closeIcon').text('X')
-            .css({
-                'position' : 'absolute',
-                "right": "10px",
-                "top ":"5px",
-                'font-size':'30px',
-                'color':'white'
-            });
-        $('#modalPopup').append(yerin.compUI.div('popupContent'));
-        $('#popupContent')
-            .css({
-                'position' : 'absolute',
-                'bottom' : '0px',
-                'width' : '100%',
-                'height' : '90%',
-                'background-color' : 'white'
-            });
-        $('#popupContent').append(yerin.compUI.span('modalContent'));
-        $('#modalContent').append(yerin.compUI.div('googleMap'));
-        $('#googleMap')
-            .css({
-                'height' : '300px',
-                'width' : '100%',
-                'position' : 'absolute',
-                'top' : '130px'
-            });
-        $('#googleMap').load('map.html');
     };
     return {onCreate : onCreate, setContentView : setContentView};
 })();
@@ -1480,6 +1597,7 @@ yerin.searchResult=(function () {
                url : 'json/flight.json',
                type : 'post',
                dataType : 'json',
+
                success : d => {
                    var depart_flight_price = 0;
                    var arrive_flight_price = 0;
@@ -2352,7 +2470,8 @@ yerin.final=(function () {
                 'text-align' : 'center',
                 'font-size' : '25px'
             });
-        $.ajax({
+        $('#reserveNo').text('예매번호:'+yerin.session.getSessionData('random'));
+       /* $.ajax({
             async : false,
             url : 'json/flightReservation.json',
             type : 'post',
@@ -2375,7 +2494,7 @@ yerin.final=(function () {
             error : e => {
                 alert('final detail error;;;');
             }
-        });
+        });*/
         $('#content').append(yerin.compUI.div('final-depart-flight-list'));
         $('#final-depart-flight-list').css({
             'border': '1px solid grey',
